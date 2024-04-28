@@ -61,8 +61,8 @@ export default function Layout() {
   });
   useEffect(() => {
     console.log(storedUserInfo, 'storedUserInfo');
-    setUserInfo(storedUserInfo.userInfo);
-    setItems(signedItmes);
+    storedUserInfo.userInfo && setUserInfo(storedUserInfo.userInfo);
+    storedUserInfo.userInfo && setItems(signedItmes);
   }, [storedUserInfo]);
 
   return (
