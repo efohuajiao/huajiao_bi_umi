@@ -11,3 +11,5 @@ export interface UserInfo {
   exp?: number;
   iat?: number;
 }
+
+export type UserInfoType = UserInfo | null;

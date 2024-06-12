@@ -1,5 +1,6 @@
 import defaultAvatar from '@/assets/avatar.jpg';
 import titleIcon from '@/assets/title-icon.svg';
+import { UserInfoType } from '@/type';
 import {
   BarChartOutlined,
   LogoutOutlined,
@@ -36,7 +37,7 @@ const signedItmes = [
   {
     key: '3',
     label: (
-      <Link to="/login" className="top-links-link">
+      <Link to="/mychart" className="top-links-link">
         <BarChartOutlined /> 我的图表
       </Link>
     ),
@@ -45,16 +46,21 @@ const signedItmes = [
     key: '4',
     label: (
       <>
-        <span>
+        <span onClick={() => handleUserLogout()}>
           <LogoutOutlined /> 用户注销
         </span>
       </>
     ),
   },
 ];
+
+function handleUserLogout() {
+  console.log('logout===');
+}
+
 export default function Layout() {
-  const [userInfo, setUserInfo] = useState(null);
-  const [items, setItems] = useState(unsignItems);
+  const [userInfo, setUserInfo] = useState<UserInfoType>(null);
+  const [items, setItems] = useState(signedItmes);
 
   const storedUserInfo = useSelector((state: any) => {
     return state.userStore;

@@ -6,6 +6,7 @@ export default defineConfig({
     { path: '/docs', component: 'docs' },
     { path: '/login', component: 'Login', layout: false },
     { path: '/analyze', component: 'Analyze' },
+    { path: '/mychart', component: 'MyChart' },
   ],
 
   npmClient: 'pnpm',
